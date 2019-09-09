@@ -33,7 +33,8 @@ fi
 
 if [ "$1" = 'supervisord' ]; then
     shift
-    set -- "$(which supervisord)" "$@"
+    # set -- "$(which supervisord)" "$@"
+    set -- "supervisord" "$@"
 fi
 
 exec "$@"
