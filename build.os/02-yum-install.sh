@@ -3,12 +3,12 @@
 set -e
 set -x
 
-# system
-yum -y --setopt=tsflags=nodocs install \
+yum -y --setopt=tsflags=nodocs --enablerepo ol7_optional_latest,ol7_developer_EPEL install \
 novnc \
 python-websockify \
 numpy \
-tigervnc-server \
+x11vnc \
+xorg-x11-server-Xvfb \
 fluxbox \
 xterm \
 firefox \
