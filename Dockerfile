@@ -18,12 +18,12 @@ RUN set -ex; \
     supervisor; \
     yum clean all
 
-RUN ln -fs /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+RUN set -ex; \
+    ln -fs /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
-ENV LANG='ru_RU.UTF-8' LANGUAGE='ru_RU:ru' LC_ALL='ru_RU.UTF-8'
 # ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-
-ENV DISPLAY=':1' DISPLAY_WIDTH='1280' DISPLAY_HEIGHT='1024'
+ENV LANG='ru_RU.UTF-8' LANGUAGE='ru_RU:ru' LC_ALL='ru_RU.UTF-8' \
+    DISPLAY=':1' DISPLAY_WIDTH='1280' DISPLAY_HEIGHT='1024'
 
 COPY . /app
 
