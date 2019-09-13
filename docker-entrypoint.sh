@@ -11,8 +11,8 @@ else
     exit 1
 fi
 
-openssl req -new -x509 -days 36500 -nodes -batch -out /app/novnc.pem -keyout /app/novnc.pem
-if [ $? -ne 0 ]; then exit 1; fi
+# openssl req -new -x509 -days 36500 -nodes -batch -out /app/novnc.pem -keyout /app/novnc.pem
+# if [ $? -ne 0 ]; then exit 1; fi
 
 if [ "${1:0:1}" = '-' ]; then
     set -- supervisord "$@"
