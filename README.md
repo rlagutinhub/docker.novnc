@@ -69,6 +69,8 @@ services:
 
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
 
+![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen.png)
+
 ## On DockerHub / GitHub
 ___
 * DockerHub [rlagutinhub/docker.novnc](https://hub.docker.com/r/rlagutinhub/docker.novnc)
