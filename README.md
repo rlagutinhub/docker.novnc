@@ -20,8 +20,7 @@ This image is intended to be used for displaying X11 applications from other con
 You can specify the following variables:
 * `DISPLAY_WIDTH=<width>` (1024)
 * `DISPLAY_HEIGHT=<height>` (768)
-* `RUN_XTERM={yes|no}` (yes)
-* `RUN_FLUXBOX={yes|no}` (yes)
+* `VNC_PASS=<password>` (passw0rd)
 
 ### Stand-alone Demo
 Run with default settings:
