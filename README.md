@@ -32,7 +32,7 @@ You can specify the following variables:
 ### Standalone
 Run with default settings:
 ```bash
-docker run -it --rm --stop-timeout 60 --name vnc --network bridge -p 6080:6080/tcp docker.novnc:latest
+docker run -it --rm --shm-size 256m --stop-timeout 60 --name vnc --network bridge -p 6080:6080/tcp docker.novnc:latest
 ```
 Run with custom settings:
 ```bash
