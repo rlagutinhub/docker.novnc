@@ -37,6 +37,7 @@ docker run -it --rm --stop-timeout 60 --name vnc --network bridge -p 6080:6080/t
 Run with custom settings:
 ```bash
 docker run -dit \
+ --shm-size 256m \
  --stop-timeout 60 \
  -e "DISPLAY_WIDTH=1920" \
  -e "DISPLAY_HEIGHT=899" \
@@ -60,6 +61,7 @@ services:
     image: docker.novnc:latest
     container_name: vnc
     stop_grace_period: 1m
+    shm_size: 256mb
     network_mode: bridge
     # restart: always
     environment:
