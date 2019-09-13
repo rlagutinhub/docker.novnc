@@ -25,7 +25,7 @@ You can specify the following variables:
 * `DISPLAY_HEIGHT=<height>` (768)
 * `VNC_PASS=<password>` (passw0rd)
 
-### Stand-alone Demo
+### Stand-alone
 Run with default settings:
 ```bash
 docker run -it --rm --name vnc --network bridge -p 6080:6080/tcp vnc:latest
