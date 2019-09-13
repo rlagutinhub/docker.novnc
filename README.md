@@ -54,8 +54,8 @@ services:
     network_mode: bridge
     # restart: always
     environment:
-      - DISPLAY_WIDTH=1600
-      - DISPLAY_HEIGHT=968
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=899
       - VNC_PASS=123456
     ports:
       - 6080:6080/tcp
