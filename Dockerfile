@@ -27,7 +27,7 @@ RUN set -ex; \
 ENV LANG='ru_RU.UTF-8' LANGUAGE='ru_RU:ru' LC_ALL='ru_RU.UTF-8'
 # ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
-# vnc default properties 
+# default settings
 ENV DISPLAY=':1' DISPLAY_WIDTH='1024' DISPLAY_HEIGHT='768' VNC_PASS='passw0rd'
 
 COPY . /app
