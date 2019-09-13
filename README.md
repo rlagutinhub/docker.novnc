@@ -18,7 +18,7 @@ This image is intended to be used for displaying X11 applications from container
 * [supervisord](http://supervisord.org) - to keep it all running
 
 Build image:
-`docker build -f Dockerfile -t vnc .`
+`docker build -f Dockerfile -t docker.novnc .`
 
 ## Usage
 
@@ -32,7 +32,7 @@ You can specify the following variables:
 ### Stand-alone
 Run with default settings:
 ```bash
-docker run -it --rm --stop-timeout 60 --name vnc --network bridge -p 6080:6080/tcp vnc:latest
+docker run -it --rm --stop-timeout 60 --name vnc --network bridge -p 6080:6080/tcp docker.novnc:latest
 ```
 Run with custom settings:
 ```bash
@@ -44,7 +44,7 @@ docker run -dit \
  --network=bridge \
  -p 6080:6080/tcp \
  --name vnc \
- vnc:latest
+ docker.novnc:latest
 ```
 
 ### Composition
@@ -57,7 +57,7 @@ Run with custom settings:
 version: '3.7'
 services:
   vnc:
-    image: vnc:latest
+    image: docker.novnc:latest
     container_name: vnc
     stop_grace_period: 1m
     network_mode: bridge
