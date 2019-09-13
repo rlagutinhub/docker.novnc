@@ -45,7 +45,6 @@ Run with custom settings:
 * `docker-compose -f docker-compose.yml -p "vnc" ps`
 * `docker-compose -f docker-compose.yml -p "vnc" stop`
 * `docker-compose -f docker-compose.yml -p "vnc" rm`
-docker-compose.yml:
 ```bash
 version: '3.7'
 services:
