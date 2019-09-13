@@ -38,26 +38,30 @@ docker run -dit \
  --name vnc \
  vnc:latest
 ```
+
+### Composition
+Run with custom settings:
+```bash
+version: '3.7'
+services:
+  vnc:
+    image: vnc:latest
+    environment:
+      - DISPLAY_WIDTH=1600
+      - DISPLAY_HEIGHT=968
+      - VNC_PASS=123456
+    ports:
+      - 6080:6080/tcp
+    networks:
+      - bridge
+networks:
+  bridge:
+    external: true
+```
+
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
 
-```
-docker build -f Dockerfile -t vnc .
-
-# default settings
-
-
-# custom settings
-docker run -dit \
- -e "DISPLAY_WIDTH=1920" \
- -e "DISPLAY_HEIGHT=899" \
- -e "VNC_PASS=123456" \
- --network=bridge \
- -p 6080:6080/tcp \
- --name vnc \
- vnc:latest
-
-docker ps -a
-docker exec -it vnc bash
-docker logs vnc
-docker rm -f vnc
-```
+## On DockerHub / GitHub
+___
+* DockerHub [rlagutinhub/docker.novnc](https://hub.docker.com/r/rlagutinhub/docker.novnc)
+* GitHub [rlagutinhub/docker.novnc](https://github.com/rlagutinhub/docker.novnc)
