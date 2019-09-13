@@ -16,6 +16,8 @@ RUN set -ex; \
     firefox \
     glibc \
     glibc-common \
+    openssl \
+    conky \
     supervisor; \
     yum clean all
 
