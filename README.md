@@ -9,6 +9,7 @@ This image is intended to be used for displaying X11 applications from container
 * [x11vnc](http://www.karlrunge.com/x11vnc/) - A VNC server that scrapes the above X11 server
 * [noNVC](https://kanaka.github.io/noVNC/) - A HTML5 canvas vnc viewer
 * [Fluxbox](http://www.fluxbox.org/) - a small window manager
+* [Conky](https://github.com/brndnmtthws/conky) - light-weight system monitor for X
 * [xterm](http://invisible-island.net/xterm/) - to demo that it works
 * [firefox](https://www.mozilla.org) - web browser developed by the Mozilla Foundation
 * [supervisord](http://supervisord.org) - to keep it all running
@@ -28,11 +29,12 @@ You can specify the following variables:
 ### Stand-alone
 Run with default settings:
 ```bash
-docker run -it --rm --name vnc --network bridge -p 6080:6080/tcp vnc:latest
+docker run -it --rm --stop-timeout 60 --name vnc --network bridge -p 6080:6080/tcp vnc:latest
 ```
 Run with custom settings:
 ```bash
 docker run -dit \
+ --stop-timeout 60 \
  -e "DISPLAY_WIDTH=1920" \
  -e "DISPLAY_HEIGHT=899" \
  -e "VNC_PASS=123456" \
@@ -54,6 +56,7 @@ services:
   vnc-app:
     image: vnc:latest
     container_name: vnc-app
+    stop_grace_period: 1m
     network_mode: bridge
     # restart: always
     environment:
