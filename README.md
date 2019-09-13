@@ -2,6 +2,9 @@
 ```
 ```
 This image is intended to be used for displaying X11 applications from container in a browser.
+>	* Base image oraclelinux:7-slim
+
+***
 
 ## Image Contents
 
