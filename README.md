@@ -13,8 +13,7 @@ This image is intended to be used for displaying X11 applications from container
 * [firefox](https://www.mozilla.org) - web browser developed by the Mozilla Foundation
 * [supervisord](http://supervisord.org) - to keep it all running
 
-### Build
-
+Build image:
 `docker build -f Dockerfile -t vnc .`
 
 ## Usage
