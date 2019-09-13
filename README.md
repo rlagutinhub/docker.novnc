@@ -53,9 +53,9 @@ Run with custom settings:
 ```bash
 version: '3.7'
 services:
-  vnc-app:
+  vnc:
     image: vnc:latest
-    container_name: vnc-app
+    container_name: vnc
     stop_grace_period: 1m
     network_mode: bridge
     # restart: always
