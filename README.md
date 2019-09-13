@@ -1,7 +1,7 @@
 # noVNC Display Container
 ```
 ```
-This image is intended to be used for displaying X11 applications from other containers in a browser.
+This image is intended to be used for displaying X11 applications from container in a browser.
 
 ## Image Contents
 
