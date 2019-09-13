@@ -41,22 +41,25 @@ docker run -dit \
 
 ### Composition
 Run with custom settings:
+* `docker-compose -f docker-compose.yml -p "vnc" up --build -d`
+* `docker-compose -f docker-compose.yml -p "vnc" ps`
+* `docker-compose -f docker-compose.yml -p "vnc" stop`
+* `docker-compose -f docker-compose.yml -p "vnc" rm`
+docker-compose.yml:
 ```bash
 version: '3.7'
 services:
-  vnc:
+  vnc-app:
     image: vnc:latest
+    container_name: vnc-app
+    network_mode: bridge
+    # restart: always
     environment:
       - DISPLAY_WIDTH=1600
       - DISPLAY_HEIGHT=968
       - VNC_PASS=123456
     ports:
       - 6080:6080/tcp
-    networks:
-      - bridge
-networks:
-  bridge:
-    external: true
 ```
 
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
