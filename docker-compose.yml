@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   vnc:
-    image: vnc:latest
+    image: docker.novnc:latest
     container_name: vnc
     stop_grace_period: 1m
     network_mode: bridge
