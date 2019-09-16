@@ -54,6 +54,8 @@ docker run -dit \
  docker.novnc:latest
 ```
 
+![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen1.png)
+
 ### Composition
 Run with custom settings:
 * `docker-compose -f docker-compose.yml -p "vnc" up --build -d`
@@ -78,8 +80,7 @@ services:
       - 6080:6080/tcp
 ```
 
-![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen1.png)
-
+### Usage
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
 
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen2.png)
