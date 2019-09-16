@@ -80,7 +80,7 @@ services:
       - 6080:6080/tcp
 ```
 
-### Usage
+### Result
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
 
 ![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen2.png)
