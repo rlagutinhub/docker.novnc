@@ -68,7 +68,7 @@ services:
   vnc:
     image: docker.novnc:latest
     container_name: vnc
-    shm_size: 64mb
+    shm_size: 256mb
     stop_grace_period: 1m
     network_mode: bridge
     # restart: always
