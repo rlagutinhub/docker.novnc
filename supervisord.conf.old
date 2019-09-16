@@ -8,7 +8,7 @@ loglevel = info
 # loglevel = debug
 
 [program:xvfb]
-command=/app/run.xvfb.sh
+command=Xvfb :1 -extension GLX -screen 0 "%(ENV_DISPLAY_WIDTH)s"x"%(ENV_DISPLAY_HEIGHT)s"x24 -listen tcp -ac
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
@@ -16,7 +16,7 @@ autorestart = true
 priority=10
 
 [program:fluxbox]
-command=/app/run.fluxbox.sh
+command=fluxbox
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
@@ -24,7 +24,7 @@ autorestart = true
 priority=20
 
 [program:x11vnc]
-command=/app/run.x11vnc.sh
+command=x11vnc -usepw -display :1
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
@@ -32,7 +32,7 @@ autorestart = true
 priority=30
 
 [program:novnc]
-command=/app/run.novnc.sh
+command=websockify --web /usr/share/novnc 6080 localhost:5900
 # command=websockify --web /usr/share/novnc 6080 localhost:5900 --cert /app/novnc.pem --ssl-only
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
@@ -41,20 +41,28 @@ autorestart = true
 priority=40
 
 [program:conky]
-command=/app/run.conky.sh
+command=conky --config=/app/conky.conf
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
 autorestart = true
 priority=50
 
+[program:bg]
+command=fbsetroot -solid black
+stdout_logfile = /var/log/supervisor.%(program_name)s.log
+stderr_logfile = /var/log/supervisor.%(program_name)s.log
+autostart = true
+autorestart = false
+priority=60
+
 [program:xterm]
-command=/app/run.xterm.sh
+command=xterm
 stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
 autorestart = true
-priority=60
+priority=70
 
 [program:firefox]
 command=/app/run.firefox.sh
@@ -62,4 +70,4 @@ stdout_logfile = /var/log/supervisor.%(program_name)s.log
 stderr_logfile = /var/log/supervisor.%(program_name)s.log
 autostart = true
 autorestart = true
-priority=70
+priority=80
