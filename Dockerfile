@@ -18,6 +18,7 @@ RUN set -ex; \
     glibc-common \
     openssl \
     conky \
+    procps \
     supervisor; \
     yum clean all
 
