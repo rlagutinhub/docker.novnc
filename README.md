@@ -33,7 +33,7 @@ You can specify the following variables:
 Run with default settings:
 ```bash
 docker run -it --rm \
- --shm-size 64m \
+ --shm-size 256m \
  --stop-timeout 60 \
  --name vnc \
  --network bridge \
@@ -43,7 +43,7 @@ docker run -it --rm \
 Run with custom settings:
 ```bash
 docker run -dit \
- --shm-size 64m \
+ --shm-size 256m \
  --stop-timeout 60 \
  -e "DISPLAY_WIDTH=1920" \
  -e "DISPLAY_HEIGHT=899" \
