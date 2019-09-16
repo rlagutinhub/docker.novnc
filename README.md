@@ -78,9 +78,11 @@ services:
       - 6080:6080/tcp
 ```
 
+![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen1.png)
+
 Open a browser and see the `xterm` and `firefox` demo at `http://<server>:6080`
 
-![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen.png)
+![alt text](https://raw.githubusercontent.com/rlagutinhub/docker.novnc/master/screen2.png)
 
 ## On DockerHub / GitHub
 ___
