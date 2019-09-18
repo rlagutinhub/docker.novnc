@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.7'123
 services:
   vnc:
     image: docker.novnc:latest
