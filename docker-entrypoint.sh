@@ -3,7 +3,7 @@
 set -e
 set -x
 
-if [ ! -e "${VNC_PASS}" ]; then
+if [ ! -z "${VNC_PASS}" ]; then
     mkdir -p ~/.vnc
     x11vnc -storepasswd ${VNC_PASS} ~/.vnc/passwd
     chmod 0600 ~/.vnc/passwd
