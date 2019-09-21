@@ -4,6 +4,8 @@
 This image is intended to be used for displaying x11 applications from container in a browser.
 >	* Base image oraclelinux:7-slim
 
+FYI https://github.com/rlagutinhub/docker_swarm-mode.novnc-internal-url
+
 ***
 
 ## Image Contents
