@@ -19,6 +19,7 @@ RUN set -ex; \
     openssl \
     conky \
     procps \
+    rootfiles \
     supervisor; \
     yum clean all
 
